@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ariella | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased">
+
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="content-wrapper">
+        <header class="p-4 sm:p-6 sticky top-0 bg-gray-900/80 backdrop-blur-md border-b border-gray-800" style="z-index: 50;">
+            <div class="container mx-auto flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-gradient">AC</a>
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+                    <a href="#about" class="nav-link hover:text-white transition-colors duration-300">About</a>
+                    <a href="#projects" class="nav-link hover:text-white transition-colors duration-300">Projects</a>
+                    <a href="#contact" class="nav-link hover:text-white transition-colors duration-300">Contact</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="hamburger-btn" class="text-gray-400 hover:text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+             <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-gray-900/95 backdrop-blur-md">
+                <div class="flex flex-col items-center space-y-4 py-4">
+                    <a href="#about" class="mobile-nav-link text-gray-300 hover:text-white transition-colors duration-300">About</a>
+                    <a href="#projects" class="mobile-nav-link text-gray-300 hover:text-white transition-colors duration-300">Projects</a>
+                    <a href="#contact" class="mobile-nav-link text-gray-300 hover:text-white transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="container mx-auto px-6 py-16 sm:py-24 lg:py-32">
+            
+            <section id="hero" class="text-center min-h-[60vh] flex flex-col items-center justify-center">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
+                    Hello, I'm <span class="text-gradient">Ariella Asti Cahyani</span>.
+                </h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 h-8">
+                    <span id="typing-text"></span><span class="typing-cursor">|</span>
+                </p>
+                <div class="mt-8 flex justify-center gap-4">
+                    <a href="YOUR_RESUME.pdf" download class="bg-gradient-to-r from-pink-500 to-violet-600 text-white font-medium py-2 px-6 rounded-lg hover:from-pink-500/80 hover:to-violet-600/80 transition-all duration-300 transform hover:scale-105">Get My Resume</a>
+                    <a href="#projects" class="nav-link bg-gray-800 text-white font-medium py-2 px-6 rounded-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-105">View My Work</a>
+                </div>
+            </section>
+
+            <section id="about" class="py-20 lg:py-28 scroll-animate">
+                <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-12 items-center">
+                    <div class="md:col-span-1 flex justify-center">
+                         <div class="about-portrait-container">
+                              <img src="img/Ariella_1.jpg" alt="Ariella Asti Cahyani" class="about-portrait-image">
+                         </div>
+                    </div>
+                    <div class="md:col-span-2">
+                        <h2 class="text-3xl font-bold mb-4 text-gradient">About Me</h2>
+                        <p class="text-gray-400 mb-4 leading-relaxed">
+                            I am a dedicated Computer Science student aiming to become an AI Research Scientist. My journey into tech was driven by a deep curiosity about how we can leverage data and algorithms to solve complex real-world problems.
+                        </p>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            I enjoy diving into new technologies, building projects from scratch, and collaborating with others. When I'm not coding, I love reading about the latest AI breakthroughs, sketching, or exploring new coffee shops.
+                        </p>
+                         <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-800 text-xs font-medium px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-gray-800 text-xs font-medium px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-gray-800 text-xs font-medium px-3 py-1 rounded-full">TensorFlow</span>
+                            <span class="bg-gray-800 text-xs font-medium px-3 py-1 rounded-full">React</span>
+                             <span class="bg-gray-800 text-xs font-medium px-3 py-1 rounded-full">SQL</span>
+                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="py-20 lg:py-28 scroll-animate">
+                <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+                    <div class="lg:col-span-1 lg:sticky lg:top-24">
+                        <h2 class="text-3xl font-bold mb-4 text-gradient">My Journey</h2>
+                        <p class="text-gray-400 leading-relaxed">
+                             My journey in computer science is driven by a passion for creative problem-solving. I'm particularly drawn to Artificial Intelligence, where I aim to contribute to research that pushes the boundaries of what's possible.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-2">
+                        <div class="mb-8 flex border border-gray-700 rounded-lg p-1">
+                            <button data-tab="experience" class="tab-btn w-1/2 p-2 rounded-md font-semibold text-gray-300 active">Experience</button>
+                            <button data-tab="education" class="tab-btn w-1/2 p-2 rounded-md font-semibold text-gray-300">Education</button>
+                        </div>
+
+                        <div>
+                            <div id="experience-content" class="tab-content active grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="section-card p-6 rounded-lg">
+                                    <p class="text-sm text-gray-400 mb-1">May 2024 - Aug 2024</p>
+                                    <h4 class="font-bold text-xl text-white">AI Research Intern</h4>
+                                    <p class="font-medium text-gray-300">Tech Startup Inc.</p>
+                                    <p class="text-sm text-gray-400 mt-2">
+                                         Assisted in developing a recommendation engine, preprocessed large datasets, and helped implement ML models.
+                                    </p>
+                                </div>
+                                <div class="section-card p-6 rounded-lg">
+                                    <p class="text-sm text-gray-400 mb-1">Jan 2023 - Present</p>
+                                    <h4 class="font-bold text-xl text-white">Lab Assistant</h4>
+                                    <p class="font-medium text-gray-300">BINUS University</p>
+                                    <p class="text-sm text-gray-400 mt-2">
+                                         Guided students in fundamental programming courses and maintained lab computing resources.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div id="education-content" class="tab-content grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="section-card p-6 rounded-lg">
+                                    <p class="text-sm text-gray-400 mb-1">2022 - Present</p>
+                                    <h4 class="font-bold text-xl text-white">B.Sc. in Computer Science</h4>
+                                    <p class="font-medium text-gray-300">BINUS University</p>
+                                    <p class="text-sm text-gray-400 mt-2">
+                                         Focusing on Artificial Intelligence. Coursework: Data Structures, Algorithms, Machine Learning.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="py-20 lg:py-28 scroll-animate">
+                <div class="max-w-5xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold mb-4 text-gradient">My Projects</h2>
+                    <p class="text-gray-400 mb-12 max-w-2xl mx-auto">Here are a few things I've been working on. This is dummy data, of course!</p>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                        <div class="section-card rounded-xl p-6 transition-all duration-300 hover:border-violet-500 hover:-translate-y-2">
+                            <h3 class="font-bold text-xl mb-2 text-white">Sentiment Analysis API</h3>
+                            <p class="text-gray-400 text-sm mb-4">A RESTful API built with Python and Flask that analyzes the sentiment of a given text using a pre-trained machine learning model.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-gray-700 text-xs font-medium px-2 py-1 rounded">Python</span>
+                                <span class="bg-gray-700 text-xs font-medium px-2 py-1 rounded">Flask</span>
+                                <span class="bg-gray-700 text-xs font-medium px-2 py-1 rounded">NLP</span>
+                            </div>
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View on GitHub &rarr;</a>
+                        </div>
+                        
+                        <div class="section-card rounded-xl p-6 transition-all duration-300 hover:border-pink-500 hover:-translate-y-2">
+                            <h3 class="font-bold text-xl mb-2 text-white">Interactive Data Dashboard</h3>
+                            <p class="text-gray-400 text-sm mb-4">A web-based dashboard created with React and D3.js to visualize complex datasets, allowing for interactive filtering and exploration.</p>
+                             <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-gray-700 text-xs font-medium px-2 py-1 rounded">React</span>
+                                <span class="bg-gray-700 text-xs font-medium px-2 py-1 rounded">D3.js</span>
+                                <span class="bg-gray-700 text-xs font-medium px-2 py-1 rounded">API</span>
+                            </div>
+                            <a href="#" class="text-pink-400 hover:text-pink-300 text-sm font-medium">Live Demo &rarr;</a>
+                        </div>
+
+                        <div class="section-card rounded-xl p-6 transition-all duration-300 hover:border-violet-500 hover:-translate-y-2">
+                            <h3 class="font-bold text-xl mb-2 text-white">Algorithm Visualizer</h3>
+                            <p class="text-gray-400 text-sm mb-4">A tool to visualize classic sorting and pathfinding algorithms, built with vanilla JavaScript and HTML Canvas for educational purposes.</p>
+                             <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-gray-700 text-xs font-medium px-2 py-1 rounded">JavaScript</span>
+                                <span class="bg-gray-700 text-xs font-medium px-2 py-1 rounded">HTML Canvas</span>
+                            </div>
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 text-sm font-medium">View on GitHub &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="contact" class="py-20 lg:py-28 text-center scroll-animate">
+                 <div class="max-w-2xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-4 text-gradient">Let's Connect</h2>
+                    <p class="text-gray-400 mb-8">
+                        I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team. Feel free to reach out!
+                    </p>
+                    <a href="mailto:ariellacahyani@email.com" class="inline-block bg-gradient-to-r from-pink-500 to-violet-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:from-pink-600 hover:to-violet-700 transition-all duration-300 transform hover:scale-105">
+                        Say Hello
+                    </a>
+                    <div class="mt-8 flex justify-center gap-6">
+                        <a href="https://www.linkedin.com/in/ariella-asti-cahyani/" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                        </a>
+                        <a href="https://instagram.com/your-username" target="_blank" rel="noopener noreferrer" title="Instagram" class="text-gray-400 hover:text-white transition-colors duration-300">
+                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44c0-.795-.645-1.44-1.441-1.44z"/></svg>
+                        </a>
+                         <a href="https://twitter.com/your-username" target="_blank" rel="noopener noreferrer" title="Twitter" class="text-gray-400 hover:text-white transition-colors duration-300">
+                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                         </a>
+                    </div>
+                     <div class="mt-10 pt-8 border-t border-gray-800/50 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-gray-400 text-sm">
+                         <div class="flex items-center gap-3">
+                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                             <a href="mailto:ariellacahyani@email.com" class="hover:text-white transition-colors">ariellacahyani@email.com</a>
+                         </div>
+                         <div class="hidden sm:block text-gray-600">|</div>
+                         <div class="flex items-center gap-3">
+                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.57L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                             <span>Tangerang, Indonesia</span>
+                         </div>
+                     </div>
+                 </div>
+            </section>
+        </main>
+
+        <footer class="border-t border-gray-800">
+            <div class="container mx-auto px-6 py-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Ariella Asti Cahyani. Crafted with passion.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
